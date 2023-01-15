@@ -1,0 +1,32 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:8042",
+      "sslPort": 44340
+    }
+  },
+  "profiles": {
+    "LeGuideDesPlantesApp": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production", //Production
+        "VaultUri": "https://leguidedesplantesappvaul.vault.azure.net/",
+        "AZURE_USERNAME": "paulmaingault@outlook.fr"
+      },
+      "applicationUrl": "https://localhost:7032;http://localhost:5032",
+      "dotnetRunMessages": true
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production", //Development
+        "VaultUri": "https://leguidedesplantesappvaul.vault.azure.net/",
+        "AZURE_USERNAME": "paulmaingault@outlook.fr"
+      }
+    }
+  }
+}

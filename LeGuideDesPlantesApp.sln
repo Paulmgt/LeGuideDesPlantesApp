@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeGuideDesPlantesApp", "LeGuideDesPlantesApp\LeGuideDesPlantesApp.csproj", "{DA006B7C-F5DC-445F-9DE3-86129796FA67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|iPhone = Debug|iPhone
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|Any CPU = Release|Any CPU
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA006B7C-F5DC-445F-9DE3-86129796FA67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA006B7C-F5DC-445F-9DE3-86129796FA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA006B7C-F5DC-445F-9DE3-86129796FA67}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{DA006B7C-F5DC-445F-9DE3-86129796FA67}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{DA006B7C-F5DC-445F-9DE3-86129796FA67}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{DA006B7C-F5DC-445F-9DE3-86129796FA67}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{DA006B7C-F5DC-445F-9DE3-86129796FA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA006B7C-F5DC-445F-9DE3-86129796FA67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA006B7C-F5DC-445F-9DE3-86129796FA67}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{DA006B7C-F5DC-445F-9DE3-86129796FA67}.Release|iPhone.Build.0 = Release|Any CPU
+		{DA006B7C-F5DC-445F-9DE3-86129796FA67}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{DA006B7C-F5DC-445F-9DE3-86129796FA67}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48B6610C-2470-4A13-A277-924FD9F37DC6}
+	EndGlobalSection
+EndGlobal

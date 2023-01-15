@@ -1,0 +1,48 @@
+﻿@page
+@model ExternalLoginModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+
+
+<section class=" backgroundlogin">
+    <div class="row justify-content-center paddingTop">
+
+        <div class="col-md-6">
+            <div class="login-box">
+                <h2 id="external-login-title">Associate your @Model.ProviderDisplayName account.</h2>
+                <p id="external-login-description" class="text-info">
+                    You've successfully authenticated with <strong>@Model.ProviderDisplayName</strong>.
+                    Please enter an email address for this site below and click the Register button to finish
+                    logging in.
+                </p>
+                <form sp-page-handler="Confirmation" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="user-box">
+                        <input type="password" asp-for="Input.Email" autocomplete="email" aria-required="true">
+                        <label asp-for="Input.Email"></label>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        S'enregistrer
+                    </button>
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,271 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Authorization
+@using LeGuideDesPlantesApp.Models
+@using LeGuideDesPlantesApp.Data
+
+
+
+@inject IAuthorizationService AuthorizationService
+
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- Author -->
+    <meta name="PaulMgt" content="">
+    <!-- description -->
+    <meta name="description" content="">
+    <!-- keywords -->
+    <meta name="keywords" content="">
+    <!-- Page Title -->
+    <title>@ViewData["Title"] - </title>
+    <!-- Favicon -->
+    <link rel="icon" href="~/favicon.ico">
+    <!-- Bundle -->
+    <link rel="stylesheet" href="~/vendor/css/bundle.min.css">
+    <!-- Plugin Css -->
+    <link rel="stylesheet" href="~/vendor/css/revolution-settings.min.css">
+    <link rel="stylesheet" href="~/vendor/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="~/vendor/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/vendor/css/swiper.min.css">
+    <link rel="stylesheet" href="~/vendor/css/cubeportfolio.min.css">
+    <link rel="stylesheet" href="~/vendor/css/LineIcons.min.css">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="~/vendor/css/select2.min.css">
+    <link rel="stylesheet" href="~/vendor/css/jquery-ui.bundle.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link href="~/css/custom.css" rel="stylesheet">
+    
+</head>
+
+
+<body data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">
+    <div class='back-to-top' id='back-to-top' title='Back to top'></div>
+
+
+    <!-- Start loader -->
+    <div class="loader-bg">
+        <div class="center">
+            <div class="circle">
+            </div>
+            <div class="circle">
+            </div>
+            <div class="circle">
+            </div>
+        </div>
+    </div>
+    <!-- End loader -->
+    <!--Header Start-->
+    <header class="cursor-light">
+
+
+
+        <!--Navigation-->
+
+        <nav class="navbar navbar-top-default nav-radius navbar-expand-lg">
+
+
+
+            <div class="container">
+                <a href="javascript:void(0)" title="Logo" class="collapse navbar-collapse">
+                    <!--Logo Default-->
+                    <div>
+                        <a asp-controller="Home" asp-action="Index">
+                            <img style="max-width: 60%" class="align-left" src="~/img/logo-home.png"
+                                 alt="Le Guide Des plantes - Logo"></a>
+                            
+                   </div>
+                </a>
+
+                <!--Nav Links-->
+                <div class="collapse navbar-collapse">
+                    <div class="navbar-nav ml-auto">
+                        @*<a class="nav-link " asp-area="" asp-controller="HuilesEssentiels" asp-action="Index">Huiles Essentiels</a>*@
+                        <a class="nav-link " asp-area="" asp-controller="Arbres" asp-action="Index">Plantes Ligneuses</a>
+                        <a class="nav-link " asp-area="" asp-controller="PlantesAromatiques" asp-action="Index">Les Herbes</a>
+                        <a class="nav-link " asp-area="" asp-controller="PlantesSauvages" asp-action="Index">Plantes Sauvages</a>
+                        
+                    </div>
+                    
+
+                </div>
+
+                <div class="parallax scroll">
+                    <div class="col search-col">
+                        <div class="input-group search-box-form">
+                            @RenderSection("searchzone", required: false)
+                        </div>
+                    </div>
+
+                </div>
+                
+
+
+
+                <!--Side Menu Button-->
+                <a href="javascript:void(0)" class="parallax-btn sidemenu_btn">
+
+                    <div class="animated-wrap sidemenu_btn_inner" id="sidemenu_toggle">
+                        <div class="animated-element">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+
+
+
+        </nav>
+
+       
+
+
+        <!--Side Nav-->
+        <div class="side-menu">
+            <div class="inner-wrapper">
+                <span class="btn-close link" id="btn_sideNavClose"></span>
+
+
+                <nav class="side-nav w-100">
+                    <ul class="navbar-nav">
+
+                        @if ((await AuthorizationService.AuthorizeAsync(User, "RequireAdminRole")).Succeeded)
+                        {
+
+                        }
+                        
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            @*<li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="HuilesEssentiels" asp-action="Index">Huiles Essentiels</a>
+                            </li>*@
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="PlantesAromatiques" asp-action="Index">Les Herbes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="Arbres" asp-action="Index">Plantes Ligneuses</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="PlantesSauvages" asp-action="Index">Plantes Sauvages</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link " asp-area="#contact" asp-action="Index">Contact us</a>
+                            </li>
+
+                             <li class="nav-item">
+                               
+                            </li>
+
+                        
+                    </ul>
+
+                </nav>
+
+
+                <div class="side-footer text-white w-100">
+                   
+                    <p class="company-about fadeIn text-center">© 2022 - LeGuideDesPlantesApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></p>
+                    <p>
+                        <partial name="_LoginPartial" />
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <a id="close_side_menu" href="javascript:void(0);"></a>
+        <!-- End side menu -->
+
+
+
+    </header>
+
+    <!--Header end-->
+
+
+    <div>
+        <main role="main">
+            @RenderBody()
+
+        </main>
+    </div>
+
+
+    <!-- End Inner Page -->
+    <!-- Start Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <!--Social-->
+                <div class="col-12 text-center">
+                    <div class="footer-social">
+                        <ul class="list-unstyled social-icons social-icons-simple">
+                            <li><a class="social-icon wow fadeInUp" href="javascript:void(0)"><i class="fab fa-facebook-f" aria-hidden="true"></i> </a> </li>
+                            <li><a class="social-icon wow fadeInDown" href="javascript:void(0)"><i class="fab fa-twitter" aria-hidden="true"></i> </a> </li>
+                            <li><a class="social-icon wow fadeInUp" href="javascript:void(0)"><i class="fab fa-google-plus-g" aria-hidden="true"></i> </a> </li>
+                            <li><a class="social-icon wow fadeInDown" href="javascript:void(0)"><i class="fab fa-linkedin-in" aria-hidden="true"></i> </a> </li>
+                            <li><a class="social-icon wow fadeInUp" href="javascript:void(0)"><i class="fab fa-instagram" aria-hidden="true"></i> </a> </li>
+                            <li><a class="social-icon wow fadeInUp" href="javascript:void(0)"><i class="fab fa-pinterest-p" aria-hidden="true"></i> </a> </li>
+                        </ul>
+                    </div>
+                    <!--Text-->
+                    <p class="company-about fadeIn text-white">© 2022 - LeGuideDesPlantesApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
+    <!-- JavaScript -->
+    <script src="~/vendor/js/bundle.min.js"></script>
+    <script src="~/vendor/js/wow.min.js"></script>
+    <!-- Plugin Js -->
+    <script src="~/vendor/js/jquery.fancybox.min.js"></script>
+    <script src="~/vendor/js/owl.carousel.min.js"></script>
+    <script src="~/vendor/js/swiper.min.js"></script>
+    <script src="~/vendor/js/jquery.cubeportfolio.min.js"></script>
+    <script src="~/vendor/js/jquery.appear.js"></script>
+    <script src="~/vendor/js/hover-item.js"></script>
+    <script src="~/vendor/js/isotope.pkgd.min.js"></script>
+    <!-- REVOLUTION JS FILES -->
+    <script src="~/vendor/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/vendor/js/jquery.themepunch.revolution.min.js"></script>
+    <!-- SLIDER REVOLUTION EXTENSIONS -->
+    <script src="~/vendor/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="~/vendor/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="~/vendor/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="~/vendor/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="~/vendor/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="~/vendor/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="~/vendor/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="~/vendor/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="~/vendor/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="~/vendor/js/parallaxie.min.js"></script>
+    <!-- custom script -->
+    <script src="~/vendor/js/select2.min.js"></script>
+   @* <script src="~/vendor/js/date.js"></script>*@
+    <script src="~/vendor/js/jquery.hoverdir.js"></script>
+    <script src="~/vendor/js/jquery-ui.bundle.js"></script>
+    <script src="~/vendor/js/flip.js"></script>
+    @*<script src="~/vendor/js/contact_us.js"></script>*@
+    <script src="~/vendor/js/swiper.min.js"></script>
+    <script src="~/js/contact.js"></script>
+    <script src="~/js/script.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+
+</body>
+</html>

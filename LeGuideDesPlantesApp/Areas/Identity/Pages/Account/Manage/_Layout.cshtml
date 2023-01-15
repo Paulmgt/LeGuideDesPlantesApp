@@ -1,0 +1,62 @@
+﻿@{
+    if (ViewData.TryGetValue("ParentLayout", out var parentLayout))
+    {
+        Layout = (string)parentLayout;
+    }
+    else
+    {
+        Layout = "/Areas/Identity/Pages/_Layout.cshtml";
+    }
+}
+
+
+<body data-spy="scroll" data-target=".navbar" data-offset="90" class="position-relative">
+
+<header>
+
+       <!--Side Nav-->
+        <div class="side-menu">
+            <div class="inner-wrapper">
+                <span class="btn-close link" id="btn_sideNavClose"></span>
+                <div class="col search-col">
+                    
+                </div>
+                <partial name="_ManageNav" />
+            
+           
+
+
+                <div class="side-footer text-white w-100">
+                    
+                    <p class="company-about fadeIn text-center">© 2022 - LeGuideDesPlantesApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></p>
+                    <p>
+                        <partial name="_LoginPartial" />
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <a id="close_side_menu" href="javascript:void(0);"></a>
+        <!-- End side menu -->
+
+    </header>
+
+
+        
+   
+        <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    </body>
+
+                        @section Scripts {
+    @RenderSection("Scripts", required: false)
+}
+
+

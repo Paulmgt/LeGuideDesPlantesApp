@@ -1,0 +1,90 @@
+﻿@model LeGuideDesPlantesApp.Models.Pays
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+
+        <section class="bg-counter demo-banner">
+            <h2 class="d-none">as</h2>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <div class="serial-box">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="serial-box">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="serial-box">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="serial-box mb-0">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </header>
+
+<h4>Pays</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="NomPays" class="control-label"></label>
+                <input asp-for="NomPays" class="form-control" />
+                <span asp-validation-for="NomPays" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HuilesEssentielId" class="control-label"></label>
+                <input asp-for="HuilesEssentielId" class="form-control" />
+                <span asp-validation-for="HuilesEssentielId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlantesAromatiquesId" class="control-label"></label>
+                <input asp-for="PlantesAromatiquesId" class="form-control" />
+                <span asp-validation-for="PlantesAromatiquesId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlantesSauvagesId" class="control-label"></label>
+                <input asp-for="PlantesSauvagesId" class="form-control" />
+                <span asp-validation-for="PlantesSauvagesId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ArbresId" class="control-label"></label>
+                <input asp-for="ArbresId" class="form-control" />
+                <span asp-validation-for="ArbresId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

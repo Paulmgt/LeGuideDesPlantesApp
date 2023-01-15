@@ -1,0 +1,161 @@
+﻿@*@model IEnumerable<LeGuideDesPlantesApp.Models.Arbres>*@
+@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Web.Common;
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Authorization
+
+
+@inject IAuthorizationService AuthorizationService
+
+@model X.PagedList.IPagedList<LeGuideDesPlantesApp.Models.Arbres>
+
+
+@{
+    ViewBag.Title = "Index";
+    // Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int nbitem = 0;
+
+}
+
+<!--Navigation-->
+@section searchzone {
+
+    @using (Html.BeginForm("Index", "Arbres", FormMethod.Get))
+    {
+
+        <form asp-controller="Arbres" asp-action="Index" name="Search" method="get">
+            <div class="input-group search-box-form">
+                <input type="text" name="SearchString" class="form-control" placeholder="Search Here" value="@ViewBag.CurrentFilter" />
+                <div class="input-group-prepend">
+                    <button style="border-top-right-radius: 100px; border-bottom-right-radius: 100px" class="input-group-text" type="submit" value="Search"></button>
+                </div>
+            </div>
+        </form>
+    }
+
+ }
+
+
+    <!--slider sec strat-->
+    <section id="slider-sec" class="slider-sec parallax backgroundlogin">
+        <div class="overlay text-center d-flex justify-content-center align-items-center">
+            <div class="slide-contain">
+                <h4>Arbres</h4>
+                <div class="crumbs">
+                    <nav aria-label="breadcrumb" class="breadcrumb-items">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                            @if ((await AuthorizationService.AuthorizeAsync(User, "RequireAdminRole")).Succeeded)
+                        {
+                            <li class="breadcrumb-item"><a asp-action="Create">Create New</a></li>
+                        }
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--slider sec end-->
+
+   
+
+
+
+    <div class="container navbar-extand-lg">
+        <div class="row">
+       @Html.PagedListPager(Model, page => Url.Action("Index", 
+        new  {
+    page ,sortOrder = ViewBag.CurrentSort,
+    currentFilter=ViewBag.CurrentFilter }),
+
+    new PagedListRenderOptions()
+    {
+    DisplayLinkToIndividualPages = true,
+    MaximumPageNumbersToDisplay = 4,
+    ContainerDivClasses = new string[] { "pagination" },
+    UlElementClasses = new string[] { "p1" },
+    LiElementClasses =  new string[]  {" is-active "},
+    PageClasses = new string[] { " page-link " }
+
+    
+    
+  
+    })
+        </div>
+</div>
+
+
+<section class="detail-process ">
+    @{
+
+
+
+
+            @if (Model != null)
+            //   @foreach (var item in Model)
+
+                @foreach (var item in Model)
+            {
+                nbitem = nbitem + 1;
+
+                if (nbitem % 2 == 1)
+                {
+                        <div class="row no-gutters">
+                            <div class="col-sm-12 col-lg-6 overflow-hidden">
+                                <div class="resize zoom-flou img:hover">
+                                    <img class="" src="~/assets/PhotosArbres/@Html.DisplayFor(modelItem => item.Photos)" alt="image">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 margin-col">
+                                <div class="process_text wow slideInRight" data-wow-delay="900ms" data-wow-duration="0.8s" style="visibility: visible; animation-delay: 700ms; animation-name: slideInRight;">
+                                    <p class="sub-heading text-brown">@Html.DisplayFor(modelItem => item.PeriodeDeFleuraison)</p>
+                                    <h3 class="main_heading margin_heading heading_font_sm width text-brown">@Html.DisplayFor(modelItem => item.Nom)</h3>
+                                    <p class="info info_width">
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </p>
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="mt-3 btn btn-rounded btn-large btn-pink fadeInDown-slide animated  text-uppercase">
+                                        Details
+                                    </a>
+                                    <p hidden="true">@nbitem</p>
+                                </div>
+
+                            </div>
+                        </div>
+                }
+                else if (nbitem % 2 == 0)
+                {
+                        <div class="row no-gutters">
+                            <div class="col-sm-12 col-lg-6 order-lg-2 overflow-hidden">
+                            <div class="resize zoom-flou img:hover">
+                                    <img src="~/assets/PhotosArbres/@Html.DisplayFor(modelItem => item.Photos)" alt="image">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6 order-lg-1 margin-col">
+                                <div class="process_text wow slideInLeft" data-wow-delay="900ms" data-wow-duration="0.8s" style="visibility: visible; animation-delay: 700ms; animation-name: slideInLeft;">
+                                    <p class="sub-heading text-brown">@Html.DisplayFor(modelItem => item.PeriodeDeFleuraison)</p>
+                                    <h3 class="main_heading margin_heading heading_font_sm width text-brown">@Html.DisplayFor(modelItem => item.Nom)</h3>
+                                    <p class="info info_width">
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </p>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="mt-3 btn btn-rounded btn-large btn-pink fadeInDown-slide animated  text-uppercase">
+                                    Details
+                                </a>
+                                    <p hidden="true">@nbitem</p>
+                                </div>
+                            </div>
+                        </div>
+                }
+
+
+
+            }
+    }
+
+
+ 
+
+
+</section>
+   

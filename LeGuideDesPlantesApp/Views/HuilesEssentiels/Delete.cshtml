@@ -1,0 +1,172 @@
+﻿@model LeGuideDesPlantesApp.Models.HuilesEssentiel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+
+        <section class="bg-counter demo-banner">
+            <h2 class="d-none">as</h2>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <div class="serial-box">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="serial-box">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="serial-box">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="serial-box mb-0">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </header>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>HuilesEssentiel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomLatin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomLatin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Photos)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Photos)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Famille)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Famille)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MethodeExtraction)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MethodeExtraction)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ComposantPrincipal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ComposantPrincipal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Conservation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Conservation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProprietePrincipal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProprietePrincipal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ActionSurLeCorps)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ActionSurLeCorps)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Circulation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Circulation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Digestion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Digestion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MusclesEtArticulations)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MusclesEtArticulations)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PeauEtCheveux)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PeauEtCheveux)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProblemesFeminins)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProblemesFeminins)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GrossesEtEnfants)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GrossesEtEnfants)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SensualitePourCouples)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SensualitePourCouples)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Precaution)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Precaution)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PlantesSauvages)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PlantesSauvages.Nom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PlantesAromatiques)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PlantesAromatiques.Nom)
+        </dd>
+       
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

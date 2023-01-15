@@ -1,0 +1,29 @@
+﻿@page
+@model AccessDeniedModel
+@{
+    ViewData["Title"] = "Access denied";
+}
+
+
+<section class=" backgroundlogin">
+    <div class="row justify-content-center paddingTop">
+        <div class="col-md-6">
+            <div class="login-box">
+                <h2>@ViewData["Title"]</h2>
+                <h5 class="mb-3">You do not have access to this resource.</h5>
+
+                <form asp-area="" asp-controller="Home" asp-action="Index" method="post">
+
+                    <button type="submit" class=" w-100 btn btn-lg">
+                    
+                    Back home
+                </button>
+                </form>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</section>

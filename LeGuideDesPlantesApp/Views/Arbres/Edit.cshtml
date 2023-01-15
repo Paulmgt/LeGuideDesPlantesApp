@@ -1,0 +1,143 @@
+﻿@model LeGuideDesPlantesApp.Models.Arbres
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+
+        <section class="bg-counter demo-banner">
+            <h2 class="d-none">as</h2>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <div class="serial-box">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="serial-box">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="serial-box">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="serial-box mb-0">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </header>
+
+<h4>Arbres</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Nom" class="control-label"></label>
+                <input asp-for="Nom" class="form-control" />
+                <span asp-validation-for="Nom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="Photos" class="text-danger"></span>
+                <label asp-for="Photos"  class="form-label"> Photo(s) <span class="text-secondary">*</span></label>
+                <input asp-for="Photos" onchange="document.getElementById('photoArbre')
+                    .src=window.URL
+                    .createObjectURL(this.files[0])" type="file" class="form-control" />
+                <img id="photoArbre" class="fileImage"/>
+            </div>
+            <div class="form-group">
+                <label asp-for="Habitat" class="control-label"></label>
+                <input asp-for="Habitat" class="form-control" />
+                <span asp-validation-for="Habitat" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Danger" class="control-label"></label>
+                <input asp-for="Danger" class="form-control" />
+                <span asp-validation-for="Danger" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BienFait" class="control-label"></label>
+                <input asp-for="BienFait" class="form-control" />
+                <span asp-validation-for="BienFait" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Culture" class="control-label"></label>
+                <input asp-for="Culture" class="form-control" />
+                <span asp-validation-for="Culture" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Taille" class="control-label"></label>
+                <input asp-for="Taille" class="form-control" />
+                <span asp-validation-for="Taille" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rusticite" class="control-label"></label>
+                <input asp-for="Rusticite" class="form-control" />
+                <span asp-validation-for="Rusticite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Maladies" class="control-label"></label>
+                <input asp-for="Maladies" class="form-control" />
+                <span asp-validation-for="Maladies" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PeriodeDeFleuraison" class="control-label"></label>
+                <input asp-for="PeriodeDeFleuraison" class="form-control" />
+                <span asp-validation-for="PeriodeDeFleuraison" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Arosage" class="control-label"></label>
+                <input asp-for="Arosage" class="form-control" />
+                <span asp-validation-for="Arosage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Voisinage" class="control-label"></label>
+                <input asp-for="Voisinage" class="form-control" />
+                <span asp-validation-for="Voisinage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrefenrenceTerrain" class="control-label"></label>
+                <input asp-for="PrefenrenceTerrain" class="form-control" />
+                <span asp-validation-for="PrefenrenceTerrain" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Entretiens" class="control-label"></label>
+                <input asp-for="Entretiens" class="form-control" />
+                <span asp-validation-for="Entretiens" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

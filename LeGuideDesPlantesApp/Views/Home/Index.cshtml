@@ -1,0 +1,589 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Authorization
+
+
+@inject IAuthorizationService AuthorizationService
+
+@{
+    ViewData["Title"] = "GuideDesPlantes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="position-relative p-0 no-transition" id="Home">
+    <h2 class="d-none">as</h2>
+    <div id="rev_slider_18_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="megaone-restaurant-1" data-source="gallery" style="background:transparent;padding:0px;">
+        <!-- START REVOLUTION SLIDER 5.4.8.1 fullscreen mode -->
+        <div id="rev_slider_18_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.8.1">
+
+            <ul>
+                <!-- SLIDE  -->
+                <li data-index="rs-44" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="assets/100x50_3d469-bg-light-1.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="~/img/banner/banner_img_3.webp" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-44-layer-2"
+                         data-x="['left','left','center','center']" data-hoffset="['0','150','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-120','-120','-120','-96']"
+                         data-fontsize="['30','26','28','23']"
+                         data-lineheight="['46','46','38','33']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+                         data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":270,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 5; white-space: nowrap; font-size: 36px; line-height: 46px; font-weight: 400; color: #fff; letter-spacing: 0px;font-family:Roboto;">
+                        <h1 class='deepshadow'>L'application d’informations :</h1>
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="bg-text tp-caption    tp-resizeme "
+                         id="slide-44-layer-1"
+                         data-x="['left','left','center','center']" data-hoffset="['0','150','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-55','-55','-55','-40']"
+                         data-fontsize="['72','50','62','45']"
+                         data-lineheight="['82','82','72','55']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+                         data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":1080,"split":"chars","splitdelay":0.1,"speed":1500,"split_direction":"forward","frame":"0","from":"sX:0.8;sY:0.8;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 6;  white-space: nowrap; font-size: 72px; line-height: 82px; font-weight: 500; color: #52591c; letter-spacing: 0px;font-family:Baloo Bhai;">
+                        <p class="pad">Le guide des <span style="color:white">plantes  </span></p>
+                    </div>
+
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-44-layer-3"
+                         data-x="['left','left','center','center']" data-hoffset="['0','150','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['40','30','40','40']"
+                         data-fontsize="['16','14','14','14']"
+                         data-width="['490','490','600','450']"
+                         data-height="none"
+                         data-whitespace="normal"
+                         data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":2400,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','center','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 7; min-width: 600px; max-width: 600px; white-space: normal; font-size: 16px; line-height: 26px; font-weight: 400; color: #fff; letter-spacing: 0px;font-family:Roboto;">
+                        Le guide des plantes App a été créé à seul but informationnel, afin d’apporter des informations authentiques et positives afin de vous aider à comprendre ce que la nature a à nous offrir.
+                    </div>
+
+                    <!-- LAYER NR. 4 -->
+                    <div class="tp-caption  tp-resizeme"
+                         id="slide-44-layer-4"
+                         data-x="['left','left','center','center']" data-hoffset="['0','150','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['138','134','138','150']"
+                         data-width="['600','600','600','450']"
+                         data-height="none"
+                         data-whitespace="normal"
+                         data-type="button"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":3350,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','center','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 8; font-family:Roboto;">
+                        <a class="btn btn-rounded btn-large btn-pink scroll" asp-action="#About">En savoir plus</a>
+                    </div>
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-45" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="assets/100x50_3d469-bg-light-1.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="~/img/banner/banner_img_2.webp" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+
+                    <!-- LAYERS -->
+                    <!-- LAYER NR. 5 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-45-layer-2"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-120','-120','-120','-96']"
+                         data-fontsize="['30','26','28','23']"
+                         data-lineheight="['46','46','38','33']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+                         data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":270,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 5; white-space: nowrap; font-size: 36px; line-height: 46px; font-weight: 400; color: #fff; letter-spacing: 0px;font-family:Roboto;">
+                        Pour découvrir la liste complète
+                    </div>
+
+                    <!-- LAYER NR. 6 -->
+                    <div class="bg-text  tp-caption   tp-resizeme"
+                         id="slide-45-layer-1"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-55','-55','-55','-40']"
+                         data-fontsize="['72','50','62','45']"
+                         data-lineheight="['82','82','72','55']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+                         data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":1080,"split":"chars","splitdelay":0.1,"speed":1500,"split_direction":"forward","frame":"0","from":"sX:0.8;sY:0.8;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['inherit','inherit','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 6; white-space: nowrap; font-size: 72px; line-height: 82px; font-weight: 500; color: #52591c; letter-spacing: 0px;font-family:Baloo Bhai;">
+                        <p class="pad">Le guide des <span style="color:white">plantes  </span></p>
+                    </div>
+
+                    <!-- LAYER NR. 7 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-45-layer-3"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['40','30','40','40']"
+                         data-fontsize="['16','14','14','14']"
+                         data-width="['490','490','600','450']"
+                         data-height="none"
+                         data-whitespace="normal"
+                         data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":2400,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['center','center','center','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 7; min-width: 600px; max-width: 600px; white-space: normal; font-size: 16px; line-height: 26px; font-weight: 400; color: #fff; letter-spacing: 0px;font-family:Roboto;">
+                        Nous vous invitons fortement à vous renseigner auprès d’un herboriste et à enrichir le guide qui saura vous répondre sur l’utilité, envoyez votre demande de compte utilisateur dès maintenant.
+                    </div>
+
+                    <!-- LAYER NR. 8 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-45-layer-4"
+                         data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['138','138','138','150']"
+                         data-width="['600','600','600','450']"
+                         data-height="none"
+                         data-whitespace="normal"
+                         data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":3350,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['center','center','center','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 8; font-family:Roboto;">
+                        <a class="btn btn-rounded btn-large btn-pink scroll" asp-action="About">Contactez-nous</a>
+                    </div>
+                </li>
+                <!-- SLIDE  -->
+                <li data-index="rs-46" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="300" data-thumb="assets/100x50_3d469-bg-light-1.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                    <!-- MAIN IMAGE -->
+                    <img src="~/img/banner/banner_img_1.webp" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                    <!-- LAYERS -->
+                    <!-- LAYER NR. 9 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-46-layer-2"
+                         data-x="['right','right','center','center']" data-hoffset="['0','150','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-120','-120','-120','-96']"
+                         data-fontsize="['36','26','28','23']"
+                         data-lineheight="['46','46','38','33']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+                         data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":270,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['right','right','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 5; white-space: nowrap; font-size: 36px; line-height: 46px; font-weight: 400; color: #fff; letter-spacing: 0px;font-family:Roboto;">
+                        Un site communautaire :
+                    </div>
+
+                    <!-- LAYER NR. 10 -->
+                    <div class="bg-text tp-caption   tp-resizeme"
+                         id="slide-46-layer-1"
+                         data-x="['right','right','center','center']" data-hoffset="['0','150','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['-55','-55','-55','-50']"
+                         data-fontsize="['72','50','62','45']"
+                         data-lineheight="['82','82','72','55']"
+                         data-width="none"
+                         data-height="none"
+                         data-whitespace="nowrap"
+                         data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":1080,"split":"chars","splitdelay":0.1,"speed":1500,"split_direction":"forward","frame":"0","from":"sX:0.8;sY:0.8;opacity:0;","to":"o:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['right','right','inherit','inherit']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 6; white-space: nowrap; font-size: 72px; line-height: 82px; font-weight: 500; color: #52591c; letter-spacing: 0px;font-family:Baloo Bhai;">
+                        <p class="pad">Le guide des <span style="color:white">plantes  </span></p>
+                    </div>
+
+                    <!-- LAYER NR. 11 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-46-layer-3"
+                         data-x="['right','right','center','center']" data-hoffset="['0','150','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['40','30','40','40']"
+                         data-fontsize="['16','14','14','14']"
+                         data-width="['490','490','600','450']"
+                         data-height="none"
+                         data-whitespace="normal"
+                         data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":2400,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['right','right','center','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 7; min-width: 600px; max-width: 600px; white-space: normal; font-size: 16px; line-height: 26px; font-weight: 400; color: #fff; letter-spacing: 0px;font-family:Roboto;">
+                        Notre intérêt est de contribuer à répertorier des plantes pour l'utilisation au quotidien, chaque fiches est documentées par des sources vérifiables.
+                    </div>
+
+                    <!-- LAYER NR. 12 -->
+                    <div class="tp-caption   tp-resizeme"
+                         id="slide-46-layer-4"
+                         data-x="['right','right','center','center']" data-hoffset="['0','150','0','0']"
+                         data-y="['middle','middle','middle','middle']" data-voffset="['138','138','138','150']"
+                         data-width="['600','600','600','450']"
+                         data-height="none"
+                         data-whitespace="normal"
+                         data-type="text"
+                         data-responsive_offset="on"
+                         data-frames='[{"delay":3350,"speed":1500,"frame":"0","from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;","mask":"x:0px;y:[100%];s:inherit;e:inherit;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                         data-textAlign="['right','right','center','center']"
+                         data-paddingtop="[0,0,0,0]"
+                         data-paddingright="[0,0,0,0]"
+                         data-paddingbottom="[0,0,0,0]"
+                         data-paddingleft="[0,0,0,0]"
+                         style="z-index: 8; font-family:Roboto;">
+                        <a class="btn btn-rounded btn-large btn-pink scroll" asp-action="About">Contactez-nous</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
+        </div>
+    </div>
+
+    <!-- END REVOLUTION SLIDER -->
+
+
+
+
+    <ul class="social-icons-simple revicon darkcolor">
+        <li class="d-table"><a class="facebook-text-hvr" href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a> </li>
+        <li class="d-table"><a class="twitter-text-hvr" href=" javascript:void(0)"><i class="fab fa-twitter"></i> </a> </li>
+        <li class="d-table"><a class="linkedin-text-hvr" href="javascript:void(0)"><i class="fab fa-linkedin-in"></i> </a> </li>
+        <li class="d-table"><a class="instagram-text-hvr" href="javascript:void(0)"><i class="fab fa-instagram"></i> </a> </li>
+    </ul>
+    <!-- END REVOLUTION SLIDER -->
+</section>
+
+
+
+
+<section id="whymegaone" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="container">
+                <div class="main-title style-two d-flex justify-content-md-around align-items-center flex-column flex-md-row text-center text-md-left wow fadeIn" data-wow-delay="300ms">
+                    <div class="col-md-5 mb-4 mb-md-0">
+                        <h5 class="mb-3"> Chaque utilisateur à son rôle de contribution</h5>
+                        <h2 class="pb-0"> Enrichir <span class="family">votre </span> quotidien</h2>
+
+                    </div>
+                    <div class="col-md-7 ml-md-4 pl-md-2">
+                        <p class="mb-4">Aujourd'hui nous avons le désir d’aller encore plus loin. Nous sommes donc devenus une application web à mission d'informer et avons constitué une base de données. Ainsi, nous inscrivons les objectifs d’amélioration continue pour permettre d’optimiser au maximum le guide des plantes.</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<section class="bg-counter demo-banner">
+    <h2 class="d-none">as</h2>
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+
+</section>
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="department-sub alt-font text-center"><h5 class="pink profession">Nos objectifs</h5></div>
+                <div class="department-title main-font text-center"><h2 class="grey">Au quotidien</h2></div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="feature-item mb-md-0 mb-5">
+
+
+                    <span class="icon">
+                        <i aria-hidden="true" class="lni-pulse"></i>
+                    </span>
+
+
+                    <div class="text feature-txt ">
+                        <h4 class="feature-heading">Santé</h4>
+                        <p>Des plantes ayant des propriétés médicamenteuses peuvent avoir également des usages alimentaires ou condimentaires ou encore servir à la préparation de boisson hygiénique.</p>
+                    </div>
+
+                </div>
+                <div class="feature-item mb-md-0 mb-5">
+                    <span class="icon-2">
+                        <i aria-hidden="true" class="lni-pyramids"></i>
+                    </span>
+
+
+                    <div class="text feature-txt">
+                        <h4 class="feature-heading">Environnement</h4>
+                        <p>Il existe des plantes presque partout sur la Terre, dans le désert, sous l'eau, dans les forêts tropicales et même en Arctique. Toutefois, leur répartition à la surface de la Terre est en fonction des conditions climatiques.</p>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="feature-item mb-md-0 mb-5">
+                    <span class="icon-2">
+                        <i aria-hidden="true" class="lni-calendar"></i>
+                    </span>
+                    <div class="text feature-txt">
+                        <h4 class="feature-heading">Culture</h4>
+                        <p>
+                            La culture sélective des plantes est le processus par lequel l'être humain modifie une espèce végétale.
+                            <br />
+                        </p>
+                    </div>
+
+                </div>
+                <div class="feature-item mb-md-0 mb-5">
+                    <span class="icon">
+                        <i aria-hidden="true" class="lni-drop"></i>
+                    </span>
+                    <div class="text feature-txt text-padding">
+                        <h4 class="feature-heading">Entretien</h4>
+                        <p>Veillez à nettoyer régulièrement vos plantes d'extérieur en pot, en supprimant les éventuelles tiges abîmées ou cassées, ainsi que les feuilles et les fleurs fanées.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<section id="whymegaone" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="container">
+                <div class="main-title style-two d-flex justify-content-md-around align-items-center flex-column flex-md-row text-center text-md-right wow fadeIn" data-wow-delay="300ms">
+
+                    <div class="col-md-7 ml-md-4 pl-md-2">
+                        <p class="mb-4">
+                            L'objectif premier de cette application est d'en faire un outils collaboratif les améliorations qui seront apporté à cette dernière auront donc pour impératif d'intégrer
+                            cette philosophie.
+                        </p>
+                    </div>
+                    <div class="col-md-5 mb-4 mb-md-0">
+                        <h5 class="mb-3"> Le guide des plantes</h5>
+                        <h2 class="pb-0"> Le guide  <span class="family">unique</span> pour les herboristes</h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<section id="ourmenu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="port">
+                    <div class="portfolio-title"> <h2 class="grey">Nos Plantes</h2></div>
+                    <div class="portfolio-subtitle">
+                        <p>
+                            Voici les dernières fiches du guide des plantes.
+                        </p>
+                    </div>
+                </div>
+                
+
+                <ul class="da-thumbs gallery" style="position: relative; height: 531.3px;">
+                    <li class="items surgery operations" style="position: absolute; left: 0px; top: 0px;">
+                        <img src="~/img/banner/banner-img-4.webp" alt="img">
+                        <div class="overlay" style="background-color:#52591c; left: 0px; top: 100%; transition: all 300ms ease 0s;">
+                            <a asp-action="index" asp-controller="PlantesSauvages" class="text-center">
+
+                                <div class="search-icon"><i class="fa fa-search"></i> </div>
+                                <h4 class="">Sauvage</h4>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="items clinical patients" style="position: absolute; left: 368px; top: 0px;">
+                        <img src="~/img/banner/banner_img_2.webp" alt="img">
+                        <div class="overlay" style="background-color:#52591c; left: 0px; top: -100%; transition: all 300ms ease 0s;">
+                            <a asp-action="index" asp-controller="PlantesSauvages"  class="text-center">
+
+                                <div class="search-icon"><i class="fa fa-search"></i> </div>
+                                <h4 class="">Sauvage</h4>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="items operations clinical" style="position: absolute; left: 736px; top: 0px;">
+                        <img src="~/img/banner/banner_img_5.webp" alt="img">
+                        <div class="overlay" style="background-color:#52591c; left: -100%; top: 0px; transition: all 300ms ease 0s;">
+                            <a asp-action="index" asp-controller="PlantesAromatiques" class="text-center">
+
+                                <div class="search-icon"><i class="fa fa-search"></i> </div>
+                                <h4 class="">Aromatiques</h4>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="items patients operations" style="position: absolute; left: 0px; top: 265px;">
+                        <img src="~/img/banner/banner_img_6.webp" alt="img">
+                        <div class="overlay" style="background-color:#52591c; left: 100%; top: 0px; transition: all 300ms ease 0s;">
+                            <a asp-action="index" asp-controller="PlantesSauvages" class="text-center">
+
+                                <div class="search-icon"><i class="fa fa-search"></i> </div>
+                                <h4 class="">Sauvages</h4>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="items surgery patients" style="position: absolute; left: 368px; top: 265px;">
+                        <img src="~/img/banner/banner_img_7.webp" alt="img">
+                        <div class="overlay" style="background-color:#52591c; left: 0px; top: -100%; transition: all 300ms ease 0s;">
+                            <a asp-action="index" asp-controller="PlantesSauvages" class="text-center">
+
+                                <div class="search-icon"><i class="fa fa-search"></i> </div>
+                                <h4 class="">Sauvages</h4>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="items clinical surgery" style="position: absolute; left: 736px; top: 265px;">
+
+                        <img src="~/img/banner/banner_img_8.webp" alt="img">
+                        <div class="overlay" style="background-color:#52591c; left: 0px; top: -100%; transition: all 300ms ease 0s;">
+                            <a asp-action="index" asp-controller="Arbres" class="text-center">
+                                <div class="search-icon"><i class="fa fa-search"></i> </div>
+                                <h4 class="">Arbres</h4>
+                            </a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Start Contact -->
+<section id="#contact">
+    <div class="container">
+        <!--Heading-->
+        <div class="row text-center wow zoomIn" data-wow-duration="1s" data-wow-delay=".3s">
+            <div class="col-12 col-md-10 col-lg-8 offset-md-1 offset-lg-2 heading-area">
+                <h3 class="heading text-center">Restons en contact</h3>
+            </div>
+        </div>
+        <!--Social-->
+        <div class="row social-links wow zoomIn" data-wow-duration="1s" data-wow-delay=".6s">
+            <div class="col-12 col-md-12 col-lg-4 d-flex justify-content-center">
+            </div>
+            <div class="col-12 col-md-12 col-lg-4 d-flex justify-content-center my-5 my-lg-0" style="-webkit-text-fill-color:black">
+                <a href="mailto:ismaelmaingault@gmail.com"><i aria-hidden="true" class="las la-paper-plane"></i>Envoyez-moi un mail directement !</a>
+            </div>
+            <div class="col-12 col-md-12 col-lg-4 d-flex justify-content-center">
+            </div>
+        </div>
+
+        <!--contact us2-->
+        <form class="contact-form" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row wow fadeIn" data-wow-duration="1.5s" data-wow-delay=".9s">
+                <div class="col-12 col-md-10 col-lg-10 offset-md-1 offset-lg-1" id="result"></div>
+
+                <div class="col-12 col-md-10 col-lg-10 offset-md-1 offset-lg-1">
+                    <div class="form-group" style="-webkit-text-fill-color:black">
+                        <input for="Input.Subject"
+                               class="form-control" *
+                               type="text"
+                               placeholder="Nom *"
+                               required="true"
+                               name="name" />
+
+                    </div>
+                   
+
+                    <div class="form-group" style="-webkit-text-fill-color:black">
+                        <input for="Input.Email" class="form-control" type="email" placeholder="Email *" required="true" name="email" />
+                    </div>
+                    <div class="form-group" style="-webkit-text-fill-color:black">
+                        <textarea for="Input.Message"
+                                  class="form-control"
+                                  placeholder="Ecrivez votre message *"
+                                  name="message"></textarea>
+                    </div>
+                    <button type="submit"
+                            class="btn contact_btn btn-large btn-blue btn-hvr-blue btn-rounded mt-4 w-100">
+                        SUBMIT INFORMATION
+                        
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- End Contact -->

@@ -1,0 +1,98 @@
+﻿@model IEnumerable<LeGuideDesPlantesApp.Models.Pays>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+
+        <section class="bg-counter demo-banner">
+            <h2 class="d-none">as</h2>
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <div class="serial-box">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="serial-box">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="serial-box">
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="serial-box mb-0">
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </header>
+
+    <section>
+<p>
+    <a class="nav-link "  asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomPays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HuilesEssentielId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlantesAromatiquesId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlantesSauvagesId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArbresId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomPays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HuilesEssentielId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlantesAromatiquesId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlantesSauvagesId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArbresId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+            </section>

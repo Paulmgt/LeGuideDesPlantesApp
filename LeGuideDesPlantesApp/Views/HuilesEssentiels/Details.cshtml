@@ -1,0 +1,255 @@
+﻿@model LeGuideDesPlantesApp.Models.HuilesEssentiel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--slider sec strat-->
+<section id="slider-sec" class="slider-sec parallax" src="~/img/blog-image1.jpg">
+    <div class="overlay text-center d-flex justify-content-center align-items-center">
+        <div class="slide-contain">
+            <h4>@Html.DisplayFor(model => model.Nom)</h4> <i class="fa fa-envira" aria-hidden="true"></i>
+            <div class="crumbs">
+                <nav aria-label="breadcrumb" class="breadcrumb-items">
+                    <ol class="breadcrumb">
+                        <a class="breadcrumb-item" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="breadcrumb-item" asp-controller="PlantesSauvages" asp-action="Index">List des Plantes sauvages</a>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="img-cover demo-banner" style="background-image: url(../../assets/PhotosPlantesSauvages/@Html.DisplayFor(model => model.Photos))">
+
+
+    <h2 class="d-none">as</h2>
+    <div class="container">
+
+        <div class="row">
+        </div>
+    </div>
+
+</section>
+
+<div class="process_text  text-md-left">
+    <h2>ABOUT US</h2>
+    <span class="hr-line mt-4 mb-4 ml-lg-0"></span>
+
+    <p class="font-weight-600 mb-lg-0 mb-2">
+        
+    </p><p>
+        
+    </p>
+</div>
+<div class="process_text  text-md-left pt-0">
+    <h2>ABOUT US</h2>
+    <span class="hr-line mt-4 mb-4 ml-lg-0"></span>
+
+    <p class="font-weight-600 mb-lg-0 mb-2">
+        
+    </p><p>
+       
+    </p>
+</div>
+
+<!--timeline sec start-->
+<div class="timeline-sec" id="timeline-sec">
+
+    <div class="timeline-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center timeline-heading">
+                <span class="sub-heading"></span>
+                <h4 class="large-heading">@Html.DisplayFor(model => model.Nom)</h4>
+                <span class="fly-line"></span>
+            </div>
+            <div class="col-12">
+                <div class="row timeline-year">
+                    <div class="col-12">
+                        <div class="t-year">
+                            <h6 class="heading">Caractéristiques</h6>
+                        </div>
+                    </div>
+                </div>
+                <ul class="timeline">
+                    <li class="timeline-block inverse-timeline wow fadeInRight" data-wow-delay=".2s">
+                        <div class="event-details">
+                            <h6 class="event-heading">Composition</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.ComposantPrincipal)</p>
+
+                        </div>
+                    </li>
+                    <li class="timeline-block simple-timeline wow fadeInLeft">
+                        <div class="event-details">
+                            <h6 class="event-heading">Extraction</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.MethodeExtraction)</p>
+
+                        </div>
+                    </li>
+                    <li class="timeline-block simple-timeline wow fadeInLeft">
+                        <div class="event-details">
+                            <h6 class="event-heading">Précaution</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.Precaution)</p>
+
+                        </div>
+                    </li>
+                    <li class="timeline-block inverse-timeline wow fadeInRight" data-wow-delay=".2s">
+                        <div class="event-details">
+                            <h6 class="event-heading">Pour le corps</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.ActionSurLeCorps)</p>
+
+                        </div>
+                    </li>
+                    <li class="timeline-block inverse-timeline wow fadeInRight" data-wow-delay=".6s">
+                        <div class="event-details">
+                            <h6 class="event-heading">Pour la digestion</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.Digestion)</p>
+
+                        </div>
+                    </li>
+                    <li class="timeline-block simple-timeline wow fadeInLeft" data-wow-delay=".4s">
+                        <div class="event-details">
+                            <h6 class="event-heading">Propriété</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.ProprietePrincipal)</p>
+
+                        </div>
+                    </li>
+                </ul>
+               
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!--timeline sec end-->
+
+<div>
+    <h4>HuilesEssentiel</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nom)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NomLatin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NomLatin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Photos)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Photos)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Famille)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Famille)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MethodeExtraction)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MethodeExtraction)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ComposantPrincipal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ComposantPrincipal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Conservation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Conservation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProprietePrincipal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProprietePrincipal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ActionSurLeCorps)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ActionSurLeCorps)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Circulation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Circulation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Digestion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Digestion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MusclesEtArticulations)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MusclesEtArticulations)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PeauEtCheveux)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PeauEtCheveux)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProblemesFeminins)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProblemesFeminins)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GrossesEtEnfants)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GrossesEtEnfants)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SensualitePourCouples)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SensualitePourCouples)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Precaution)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Precaution)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PlantesSauvages)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PlantesSauvages.Nom)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PlantesAromatiques)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PlantesAromatiques.Nom)
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

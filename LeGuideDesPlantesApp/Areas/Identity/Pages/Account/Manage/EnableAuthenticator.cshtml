@@ -1,0 +1,62 @@
+﻿@page
+@model EnableAuthenticatorModel
+@{
+    ViewData["Title"] = "Configure authenticator app";
+    ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<section class=" backgroundlogin">
+    <partial name="_StatusMessage" for="StatusMessage" />
+    <div class="row justify-content-center paddingTop">
+        <div class="col-md-6">
+            <div class="login-box">
+                <h2>@ViewData["Title"]</h2>
+                <label> enter this key <kbd>@Model.SharedKey</kbd> into your two factor authenticator app. </label>
+                <div id="qrCode"></div>
+                <div id="qrCodeData" data-url="@Model.AuthenticatorUri"></div>
+                <form id="send-code" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="user-box">
+                        <input type="text" asp-for="Input.Code" autocomplete="off">
+                        <label asp-for="Input.Code"></label>
+                        <span asp-validation-for="Input.Code" class="text-danger"></span>
+                    </div>
+
+                    <button type="submit" class=" w-100 btn btn-lg">
+                        
+                        Verify
+                    </button>
+                </form>
+                <ul class="navbar-nav" style="padding-top: 20px">
+                    <li class="nav-item">
+                        <label>
+                            Microsoft Authenticator for
+                            <a href="https://go.microsoft.com/fwlink/?Linkid=825072">Android</a> and
+                            <a href="https://go.microsoft.com/fwlink/?Linkid=825073">iOS</a> or
+                        </label>
+                    </li>
+                    <li class="nav-item">
+                        <label>
+                            Google Authenticator for
+                            <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;hl=en">Android</a> and
+                            <a href="https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8">iOS</a>.
+                        </label>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+</section>
+
+
+
+@section Scripts {
+   
+}

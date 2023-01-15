@@ -1,0 +1,179 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Authorization
+
+@model LeGuideDesPlantesApp.Models.Arbres
+
+@inject IAuthorizationService AuthorizationService
+
+
+@{
+
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+   
+}
+
+
+
+<!--slider sec strat-->
+<section id="slider-sec" class="slider-sec parallax" src="~/img/blog-image1.jpg" >
+    <div class="overlay text-center d-flex justify-content-center align-items-center">
+        <div class="slide-contain">
+            <h4>@Html.DisplayFor(model => model.Nom)</h4> <i class="fa fa-envira" aria-hidden="true"></i>
+            <div class="crumbs">
+                <nav aria-label="breadcrumb" class="breadcrumb-items">
+                    <ol class="breadcrumb">
+                        <a class="breadcrumb-item" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <a class="breadcrumb-item" asp-controller="Arbres" asp-action="Index">List des Arbres</a>
+
+                         @if ((await AuthorizationService.AuthorizeAsync(User, "RequireAdminRole")).Succeeded)
+                        {
+                            <a class="breadcrumb-item" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+                            <a class="breadcrumb-item" asp-action="Delete" asp-route-id="@Model?.Id">Delete</a>
+                        }
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="img-cover demo-banner" style="background-image: url(../../assets/PhotosArbres/@Html.DisplayFor(model => model.Photos))">
+
+    
+    <h2 class="d-none">as</h2> 
+    <div class="container">
+
+        <div class="row">
+           
+
+
+        </div>
+    </div>
+
+</section>
+
+<div class="process_text  text-md-left">
+    <h2>ABOUT US</h2>
+    <span class="hr-line mt-4 mb-4 ml-lg-0"></span>
+
+    <p class="font-weight-600 mb-lg-0 mb-2">
+        @Html.DisplayFor(model => model.Description)
+    </p><p>
+        @Html.DisplayFor(model => model.BienFait)
+    </p>
+</div>
+<div class="process_text  text-md-left pt-0">
+    <h2>ABOUT US</h2>
+    <span class="hr-line mt-4 mb-4 ml-lg-0"></span>
+
+    <p class="font-weight-600 mb-lg-0 mb-2">
+        @Html.DisplayFor(model => model.Voisinage)
+    </p><p>
+        @Html.DisplayFor(model => model.Entretiens)
+    </p>
+</div>
+
+<!--timeline sec start-->
+<div class="timeline-sec" id="timeline-sec">
+    
+    <div class="timeline-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center timeline-heading">
+                <span class="sub-heading"></span>
+                <h4 class="large-heading">@Html.DisplayFor(model => model.Nom)</h4>
+                <span class="fly-line"></span>
+            </div>
+            <div class="col-12">
+                <div class="row timeline-year">
+                    <div class="col-12">
+                        <div class="t-year">
+                            <h6 class="heading">Caractéristiques</h6>
+                        </div>
+                    </div>
+                </div>
+                <ul class="timeline">
+                    <li class="timeline-block inverse-timeline wow fadeInRight" data-wow-delay=".2s">
+                        <div class="event-details">
+                            <h6 class="event-heading">Fleuraison</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.PeriodeDeFleuraison)</p>
+
+                        </div>
+                    </li>
+                    <li class="timeline-block simple-timeline wow fadeInLeft">
+                        <div class="event-details">
+                            <h6 class="event-heading">Culture</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.Culture)</p>
+
+                        </div>
+                    </li>
+                    <li class="timeline-block simple-timeline wow fadeInLeft">
+                        <div class="event-details">
+                            <h6 class="event-heading">Danger</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.Danger)</p>
+
+                        </div>
+                    </li>
+                    <li class="timeline-block inverse-timeline wow fadeInRight" data-wow-delay=".2s">
+                        <div class="event-details">
+                            <h6 class="event-heading">Rusticité</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.Rusticite)</p>
+
+                        </div>
+                    </li>
+                    <li class="timeline-block inverse-timeline wow fadeInRight" data-wow-delay=".6s">
+                        <div class="event-details">
+                            <h6 class="event-heading">Taille</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.Taille)</p>
+
+                        </div>
+                    </li>
+                    <li class="timeline-block simple-timeline wow fadeInLeft" data-wow-delay=".4s">
+                        <div class="event-details">
+                            <h6 class="event-heading">Habitat</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.Habitat)</p>
+
+                        </div>
+                    </li>
+                </ul>
+                <div class="row timeline-year">
+                    <div class="col-12">
+                        <div class="t-year">
+                            <h6 class="heading">Entretient</h6>
+                        </div>
+                    </div>
+                </div>
+                <ul class="timeline">
+                    <li class="timeline-block simple-timeline wow fadeInLeft" data-wow-delay=".8s">
+                        <div class="event-details">
+                            <h6 class="event-heading">Voisinage</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.Voisinage)</p>
+
+                        </div>
+                    </li>
+                    <li class="timeline-block simple-timeline wow fadeInLeft" data-wow-delay=".12s">
+                        <div class="event-details">
+                            <h6 class="event-heading">Terrain</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.PrefenrenceTerrain)</p>
+
+                        </div>
+                    </li>
+                    <li class="timeline-block inverse-timeline wow fadeInRight" data-wow-delay=".10s">
+                        <div class="event-details">
+                            <h6 class="event-heading">Maladie</h6>
+                            <p class="text-des">@Html.DisplayFor(model => model.Maladies)</p>
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--timeline sec end-->
+
+
